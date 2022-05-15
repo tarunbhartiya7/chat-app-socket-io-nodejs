@@ -11,31 +11,4 @@ Content-Type: application/json
 
 ###
 
-POST https://ticketing.dev/api/users/signin
-Content-Type: application/json
-
-{
-    "email": "test5@gmail.com",
-    "password": "1234"
-}
-
-###
-
-POST https://ticketing.dev/api/users/signout
-
-###
-
-GET https://ticketing.dev/api/users/currentuser
-
-###
-
-GET http://localhost:32622/posts
-
-###
-
-POST http://localhost:32622/posts
-Content-Type: application/json
-
-{
-    "title": "React is Brilliant!"
-}
+GET http://localhost:3000/messages/Tim

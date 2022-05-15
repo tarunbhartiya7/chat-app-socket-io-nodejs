@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jasmine",
     "start": "nodemon server.js"
   },
   "keywords": [],
@@ -16,6 +16,8 @@
     "socket.io": "^4.5.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "jasmine": "^4.1.0",
+    "nodemon": "^2.0.16",
+    "request": "^2.88.2"
   }
 }
