@@ -1,6 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
+const dotenv = require('dotenv')
+dotenv.config()
 var http = require('http').Server(app)
 var io = require('socket.io')(http)
 
@@ -47,14 +49,11 @@ io.on('connection', (socket) => {
   console.log('a user connected')
 })
 
-mongoose.connect(
-  'mongodb+srv://mongo-admin:L5rNn8QlQizxReGV@cluster0.fgmu4.mongodb.net/chat-app?retryWrites=true&w=majority',
-  (err) => {
-    if (err) console.log('MongoDB connection error', err)
-    console.log('MongoDB connected')
-  }
-)
+mongoose.connect(process.env.MONGODB_URI, (err) => {
+  if (err) console.log('MongoDB connection error', err)
+  console.log('MongoDB connected')
+})
 
-http.listen(3000, () => {
-  console.log('Listening on port 3000')
+http.listen(process.env.PORT, () => {
+  console.log(`Listening on port ${process.env.PORT}`)
 })
